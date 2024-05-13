@@ -57,6 +57,8 @@ And the following histogram:
 
 # Sentiment Analysis Histogram
 
+![alt text](Figure_1.png)
+
 The histogram shows the distribution of sentiment scores, with positive scores (1) on the right and negative scores (0) on the left. In this example, most of the tweets have a positive sentiment, with a few having a negative sentiment.
 
 License
