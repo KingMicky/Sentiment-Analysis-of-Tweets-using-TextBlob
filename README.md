@@ -4,25 +4,26 @@ This repository contains a Python script that performs sentiment analysis on twe
 # Requirements
 To run the script, you will need to have the following installed:
 
-Python 3.x
-pandas
-matplotlib
-seaborn
-textblob
+Python 3.x,
+pandas,
+matplotlib,
+seaborn,
+textblob,
 
 You can install the required libraries using pip:
-'''
+```
 pip install pandas matplotlib seaborn textblob
-'''
+```
 # Usage
 To use the script, follow these steps:
 
 # Prepare a CSV file with a column named text containing the text of the tweets you want to analyze.
  Run the script using the following command:
-'''
+```
 python sentiment_analysis.py <path-to-csv-file>
-'''
+```
 Replace <path-to-csv-file> with the actual path to your CSV file.
+
 
 # The script will output a markdown table containing the sentiment analysis results, as well as a histogram showing the distribution of sentiment scores.
 Example
@@ -38,18 +39,19 @@ I will never buy this again
 This is the best thing I have ever bought
 
 You can run the script using the following command:
-'''
+
+```
 python sentiment_analysis.py tweets.csv
-'''
+```
 
 The script will output the following markdown table:
 
-text	polarity	subjectivity	sentiment
-I love this product	0.6	0.6	1
-This is a terrible product	-0.6	0.6	0
-I am happy with my purchase	0.6	0.4	1
-I will never buy this again	-0.6	0.6	0
-This is the best thing I have ever bought	0.8	0.2	1
+text                                        |  polarity   |              subjectivity           |	sentiment
+I love this product	                             0.6	                        0.6	                        1
+This is a terrible product	                    -0.6	                        0.6	                        0
+I am happy with my purchase	                     0.6	                        0.4	                        1
+I will never buy this again	                    -0.6	                        0.6                         0
+This is the best thing I have ever bought	     0.8	                        0.2	                        1
 
 And the following histogram:
 
