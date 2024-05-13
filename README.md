@@ -1,24 +1,24 @@
 # Sentiment Analysis of Tweets using TextBlob
 This repository contains a Python script that performs sentiment analysis on tweets using the TextBlob library. The script reads data from a CSV file, applies sentiment analysis to the text of each tweet, and visualizes the results using the Seaborn library.
 
-# Requirements
-To run the script, you will need to have the following installed:
+## Requirements
 
-Python 3.x,
-pandas,
-matplotlib,
-seaborn,
-textblob,
+* Python 3.x
+* pandas
+* matplotlib
+* seaborn
+* textblob
 
 You can install the required libraries using pip:
 ```
 pip install pandas matplotlib seaborn textblob
 ```
-# Usage
+## Usage
 To use the script, follow these steps:
 
 # Prepare a CSV file with a column named text containing the text of the tweets you want to analyze.
- Run the script using the following command:
+Run the script using the following command:
+
 ```
 python sentiment_analysis.py <path-to-csv-file>
 ```
