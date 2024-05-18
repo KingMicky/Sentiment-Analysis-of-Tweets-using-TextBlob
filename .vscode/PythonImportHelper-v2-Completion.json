@@ -9,335 +9,73 @@
         "documentation": {}
     },
     {
-        "label": "numpy",
+        "label": "matplotlib.pyplot",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
         "documentation": {}
     },
     {
-        "label": "re",
+        "label": "seaborn",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
         "documentation": {}
     },
     {
-        "label": "nltk",
-        "kind": 6,
+        "label": "TextBlob",
+        "importPath": "textblob",
+        "description": "textblob",
         "isExtraImport": true,
-        "importPath": "nltk",
-        "description": "nltk",
-        "detail": "nltk",
+        "detail": "textblob",
         "documentation": {}
     },
     {
-        "label": "stopwords",
-        "importPath": "nltk.corpus",
-        "description": "nltk.corpus",
-        "isExtraImport": true,
-        "detail": "nltk.corpus",
-        "documentation": {}
-    },
-    {
-        "label": "PorterStemmer",
-        "importPath": "nltk.stem",
-        "description": "nltk.stem",
-        "isExtraImport": true,
-        "detail": "nltk.stem",
-        "documentation": {}
-    },
-    {
-        "label": "CountVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "LabelEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "keras",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "keras",
-        "description": "keras",
-        "detail": "keras",
-        "documentation": {}
-    },
-    {
-        "label": "Sequential",
-        "importPath": "keras.models",
-        "description": "keras.models",
-        "isExtraImport": true,
-        "detail": "keras.models",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "SGD",
-        "importPath": "keras.optimizers",
-        "description": "keras.optimizers",
-        "isExtraImport": true,
-        "detail": "keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "data",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "data = pd.read_csv('tweets.csv')\n# Split the data into features (tweets) and labels (sentiment)\nX = data['text']\ny = data['sentiment']\n# Preprocess the text data\nnltk.download('stopwords')  # Download the stopwords corpus if not already downloaded\nstop_words = set(stopwords.words('english'))\nstemmer = PorterStemmer()\n# Remove any non-string values from the 'text' column\nX = X[X.apply(lambda x: isinstance(x, str))]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = data['text']\ny = data['sentiment']\n# Preprocess the text data\nnltk.download('stopwords')  # Download the stopwords corpus if not already downloaded\nstop_words = set(stopwords.words('english'))\nstemmer = PorterStemmer()\n# Remove any non-string values from the 'text' column\nX = X[X.apply(lambda x: isinstance(x, str))]\nX = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "y",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "y = data['sentiment']\n# Preprocess the text data\nnltk.download('stopwords')  # Download the stopwords corpus if not already downloaded\nstop_words = set(stopwords.words('english'))\nstemmer = PorterStemmer()\n# Remove any non-string values from the 'text' column\nX = X[X.apply(lambda x: isinstance(x, str))]\nX = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "stop_words",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "stop_words = set(stopwords.words('english'))\nstemmer = PorterStemmer()\n# Remove any non-string values from the 'text' column\nX = X[X.apply(lambda x: isinstance(x, str))]\nX = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "stemmer",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "stemmer = PorterStemmer()\n# Remove any non-string values from the 'text' column\nX = X[X.apply(lambda x: isinstance(x, str))]\nX = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = X[X.apply(lambda x: isinstance(x, str))]\nX = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = [re.sub('[^a-zA-Z]', ' ', tweet) for tweet in X]\nX = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = [tweet.lower().split() for tweet in X]\nX = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = [[stemmer.stem(word) for word in tweet if word not in stop_words] for tweet in X]\nX = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = [' '.join(tweet) for tweet in X]\n# Convert the text data into numerical vectors\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "vectorizer",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "vectorizer = CountVectorizer()\nX = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "X = vectorizer.fit_transform(X)\ndepressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "depressing_texts",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "depressing_texts = data[data['sentiment'] == 1]['text']\nnon_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "non_depressing_texts",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "non_depressing_texts = data[data['sentiment'] == 0]['text']\ndepressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "depressing_texts",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "depressing_texts = [text for text, score, _ in your_list if float(score) < 0]\nnon_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "non_depressing_texts",
-        "kind": 5,
-        "importPath": "dep",
-        "description": "dep",
-        "peekOfCode": "non_depressing_texts = [text for text, score, _ in your_list if float(score) >= 0]",
-        "detail": "dep",
-        "documentation": {}
-    },
-    {
-        "label": "data",
-        "kind": 5,
+        "label": "read_data",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "data = pd.read_csv('data.csv')\n# Encode the categorical columns (if applicable)\nle = LabelEncoder()\nfor col in data.columns:\n  if data[col].dtype == 'object':\n    data[col] = le.fit_transform(data[col])\n# Define the features (X) and the target (y)\nX = data[['email', 'email2', 'profession']]\ny = data['id']  # Replace with your target variable\n# Scale the input features",
+        "peekOfCode": "def read_data(filepath):\n    data = pd.read_csv(filepath)\n    data['text'] = data['text'].astype(str)\n    return data\n# Perform sentiment analysis on tweets\ndef analyze_sentiment(data):\n    data['polarity'] = data['text'].apply(lambda x: TextBlob(x).sentiment.polarity)\n    data['subjectivity'] = data['text'].apply(lambda x: TextBlob(x).sentiment.subjectivity)\n    data['sentiment'] = data['polarity'].apply(lambda x: 'positive' if x > 0 else ('negative' if x < 0 else 'neutral'))\n    return data",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "le",
-        "kind": 5,
+        "label": "analyze_sentiment",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "le = LabelEncoder()\nfor col in data.columns:\n  if data[col].dtype == 'object':\n    data[col] = le.fit_transform(data[col])\n# Define the features (X) and the target (y)\nX = data[['email', 'email2', 'profession']]\ny = data['id']  # Replace with your target variable\n# Scale the input features\nscaler = StandardScaler()\nX = scaler.fit_transform(X)",
+        "peekOfCode": "def analyze_sentiment(data):\n    data['polarity'] = data['text'].apply(lambda x: TextBlob(x).sentiment.polarity)\n    data['subjectivity'] = data['text'].apply(lambda x: TextBlob(x).sentiment.subjectivity)\n    data['sentiment'] = data['polarity'].apply(lambda x: 'positive' if x > 0 else ('negative' if x < 0 else 'neutral'))\n    return data\n# Visualize sentiment analysis results\ndef visualize_sentiment(data):\n    sns.histplot(data['polarity'], kde=False, color='#539caf')\n    plt.xlabel('Sentiment Polarity')\n    plt.ylabel('Count')",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "X",
-        "kind": 5,
+        "label": "visualize_sentiment",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "X = data[['email', 'email2', 'profession']]\ny = data['id']  # Replace with your target variable\n# Scale the input features\nscaler = StandardScaler()\nX = scaler.fit_transform(X)\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n# Create a neural network model\nmodel = Sequential()\nmodel.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))",
+        "peekOfCode": "def visualize_sentiment(data):\n    sns.histplot(data['polarity'], kde=False, color='#539caf')\n    plt.xlabel('Sentiment Polarity')\n    plt.ylabel('Count')\n    plt.title('Sentiment Analysis Histogram')\n    plt.axvline(0, color='gray', linestyle='--')\n    plt.show()\n# Output sentiment analysis results to markdown table\ndef output_results(data):\n    print(\"| Text | Polarity | Subjectivity | Sentiment |\")",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "y",
-        "kind": 5,
+        "label": "output_results",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "y = data['id']  # Replace with your target variable\n# Scale the input features\nscaler = StandardScaler()\nX = scaler.fit_transform(X)\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n# Create a neural network model\nmodel = Sequential()\nmodel.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))\nmodel.add(Dense(32, activation='relu'))",
+        "peekOfCode": "def output_results(data):\n    print(\"| Text | Polarity | Subjectivity | Sentiment |\")\n    print(\"| --- | --- | --- | --- |\")\n    for index, row in data.iterrows():\n        print(f\"| {row['text']} | {row['polarity']} | {row['subjectivity']} | {row['sentiment']} |\")\n# Main function\ndef main(filepath):\n    data = read_data(filepath)\n    data = analyze_sentiment(data)\n    visualize_sentiment(data)",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "scaler",
-        "kind": 5,
+        "label": "main",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "scaler = StandardScaler()\nX = scaler.fit_transform(X)\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n# Create a neural network model\nmodel = Sequential()\nmodel.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))\nmodel.add(Dense(32, activation='relu'))\nmodel.add(Dense(1, activation='linear', kernel_regularizer='l2'))\n# Compile the model",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "X",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "X = scaler.fit_transform(X)\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n# Create a neural network model\nmodel = Sequential()\nmodel.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))\nmodel.add(Dense(32, activation='relu'))\nmodel.add(Dense(1, activation='linear', kernel_regularizer='l2'))\n# Compile the model\nmodel.compile(loss='mse', optimizer=SGD(lr=0.01), metrics=['mse'])",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "model",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "model = Sequential()\nmodel.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))\nmodel.add(Dense(32, activation='relu'))\nmodel.add(Dense(1, activation='linear', kernel_regularizer='l2'))\n# Compile the model\nmodel.compile(loss='mse', optimizer=SGD(lr=0.01), metrics=['mse'])\n# Train the model\nmodel.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_test, y_test))\n# Make predictions\npredictions = model.predict(X_test)",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "predictions",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "predictions = model.predict(X_test)\n# Evaluate the model\nmse = model.evaluate(X_test, y_test)[1]\nprint(f'Mean Squared Error: {mse}')",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "mse",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "mse = model.evaluate(X_test, y_test)[1]\nprint(f'Mean Squared Error: {mse}')",
+        "peekOfCode": "def main(filepath):\n    data = read_data(filepath)\n    data = analyze_sentiment(data)\n    visualize_sentiment(data)\n    output_results(data)\nif __name__ == \"__main__\":\n    import sys\n    if len(sys.argv) != 2:\n        print(\"Usage: python sentiment_analysis.py tweets.csv\")\n        sys.exit(1)",
         "detail": "main",
         "documentation": {}
     }
